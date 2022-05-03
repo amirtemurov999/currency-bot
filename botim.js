@@ -8,7 +8,7 @@ let currency = {
   from: "",
   to: "",
 };
-botcham.onText(/\/start|orqaga/gi, (msg) => {
+botcham.onText(/\/start|<-orqaga/gi, (msg) => {
   const opts = {
     // reply_to_message_id: msg.message_id,
     reply_markup: JSON.stringify({
@@ -21,7 +21,7 @@ botcham.onText(/\/start|orqaga/gi, (msg) => {
       ],
     }),
   };
-  if (msg.text == "Orqaga") {
+  if (msg.text == "<-Orqaga") {
     status = false;
   }
   botcham.sendMessage(msg.chat.id, "konvertatsiyani boshlaymizmi!", opts);
@@ -39,11 +39,11 @@ botcham.on("message", async (msg) => {
     const opts = {
       // reply_to_message_id: msg.message_id,
       reply_markup: JSON.stringify({
-        keyboard: [["Orqaga"]],
+        keyboard: [["<-Orqaga"]],
       }),
     };
     botcham.sendMessage(msg.chat.id, "qiymat kiriting", opts);
-  } else if (status && msg.text !== "Orqaga") {
+  } else if (status && msg.text !== "<-Orqaga") {
     const qiymat = msg.text * 1;
     try {
       const res = await axios.get(
@@ -60,10 +60,10 @@ botcham.on("message", async (msg) => {
     } catch (error) {
       botcham.sendMessage(msg.chat.id, "hatolik");
     }
-  } else if (msg.text !== "Oldinga") {
+  } else if (msg.text !== "<-Orqaga") {
     botcham.sendMessage(
       msg.chat.id,
-      'Bot 02.05.2022 kuni "Developerda House"da ishga tushurildi'
+      'Bot 02.05.2022 kuni "Developer House"da ishga tushurildi'
     );
   }
 });
