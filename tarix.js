@@ -4,11 +4,11 @@ const tokenim = "5360282519:AAFBMF2GCrxI5TVGVwAfbNYWvRoAZ3mogHA";
 
 const botcham = new Tbot(tokenim, { polling: true });
 
-botcham.onText(/salom/gi, (msg) => {
+botcham.on("message", (msg) => {
   botcham.sendMessage(msg.chat.id, "Voaleykum salom!");
 });
 
-botcham.on("message", (msg) => {
+botchamniki.on("message", (msg) => {
   console.log("Xabar keldi botdan", msg.text);
 });
 
