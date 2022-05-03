@@ -60,7 +60,7 @@ botcham.on("message", async (msg) => {
     } catch (error) {
       botcham.sendMessage(msg.chat.id, "hatolik");
     }
-  } else if (msg.text !== "Orqaga") {
+  } else if (msg.text !== "Oldinga") {
     botcham.sendMessage(
       msg.chat.id,
       'Bot 02.05.2022 kuni "Developerda House"da ishga tushurildi'
