@@ -1,0 +1,18 @@
+//   if (/Rub-Usd/gi.test(msg.text)) {
+//     botcham.sendMessage(msg.chat.id, "sonni kiriting");
+
+//     botcham.on("message", async (msg) => {
+//       if (/[\d]/gi.test(msg.text))
+//         try {
+//           const res = await axios.get(
+//             `https://api.fastforex.io/convert?from=Rub&to=USD&amount=${
+//               msg.text * 1
+//             }&api_key=a93759dffa-1070e9ebe7-raymnb`
+//           );
+
+//           botcham.sendMessage(msg.chat.id, res.data.result.USD + " Usd");
+//         } catch (error) {
+//           botcham.sendMessage(msg.chat.id, "hatolik");
+//         }
+//     });
+//   }
